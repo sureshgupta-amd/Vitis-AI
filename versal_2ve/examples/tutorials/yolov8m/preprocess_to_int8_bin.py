@@ -81,7 +81,7 @@ def main():
     parser.add_argument("--img_size", type=int, default=640,
                         help="Resize images to this square size (default: 640)")
     parser.add_argument("--scale", type=float, default= 0.0078125,
-                        help="Quantization scale factor (default: 2.0)")
+                        help="Quantization scale factor (default:0.0078125)")
     parser.add_argument("--zero_point", type=int, default=0,
                         help="Quantization zero point (default: 0)")
 
