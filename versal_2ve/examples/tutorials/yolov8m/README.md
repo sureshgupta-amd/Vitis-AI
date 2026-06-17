@@ -60,9 +60,9 @@ docker load -i <docker_image_file>.tgz
 
 Run `docker images` to verify docker REPOSITORY, IMAGEID and TAG information. 
 
-|REPOSITORY          | TAG               | IMAGE ID    | CREATED       | SIZE   |
-|--------------------|-------------------|-------------|---------------|--------|
-|vitis_ai_2ve_docker |   release_v6.2    |   ??????    |  xx hours ago | 39.1GB |
+|REPOSITORY          | TAG                            | IMAGE ID          | CREATED       | SIZE   |
+|--------------------|--------------------------------|-------------------|---------------|--------|
+|amdih/vitis-ai      |versal-2ve-release_v6.2_0612    |  8cd54102c274     |  xx hours ago | 31.2GB |
 
 Start the docker: 
 
@@ -70,9 +70,10 @@ Start the docker:
 docker run -it --network host \  
   -v /path/to/your/license:/usr/licenses \  
   -v $PWD/yolov8m:/yolov8m \  
-  --rm vitis_ai_2ve_docker:release_v6.2
+  --rm amdih/vitis-ai:versal-2ve-release_v6.2_0612 \
    "bash"
 ```
+
 ### Install Required Python Packages
 
 Inside the docker, install the required python packages:
@@ -362,30 +363,30 @@ Use ``evaluate.py`` script to run evaluation on 5k COCO dataset. The python scri
 <tr>
 <td>FP32 CPU</td>
 <td>Original FP32 ONNX model, evaluation on CPU</td>
-<td style="text-align: center">48.0843</td>
-<td style="text-align: center">65.1921</td>
-<td style="text-align: center">51.6791</td>
-</tr>
-<tr>
-<td>VINT8-FP32 CPU</td>
-<td>FP32 model quantized to VINT8 with VINT8 head and FP32 tail, evaluation on CPU</td>
-<td style="text-align: center">46.7227</td>
-<td style="text-align: center">64.4694</td>
-<td style="text-align: center">50.5399</td>
+<td style="text-align: center">49.95</td>
+<td style="text-align: center">67.02</td>
+<td style="text-align: center">53.97</td>
 </tr>
 <tr>
 <td>BF16 NPU</td>
 <td>FP32 ONNX model compiled to BF16, evaluation on VEK385 NPU</td>
-<td style="text-align: center">46.1114</td>
-<td style="text-align: center">63.9787</td>
-<td style="text-align: center">49.8143</td>
+<td style="text-align: center">50.29</td>
+<td style="text-align: center">67.66</td>
+<td style="text-align: center">54.65</td>
+</tr>
+<tr>
+<td>VINT8-FP32 CPU</td>
+<td>FP32 model quantized to VINT8 with VINT8 head and FP32 tail, evaluation on CPU</td>
+<td style="text-align: center">48.75</td>
+<td style="text-align: center">66.28</td>
+<td style="text-align: center">53.12</td>
 </tr>
 <tr>
 <td>VINT8-BF16 NPU</td>
 <td>VINT8-FP32 quantized model compiled to VINT8-BF16, evaluation on VEK385 NPU</td>
-<td style="text-align: center">44.0326</td>
-<td style="text-align: center">62.3832</td>
-<td style="text-align: center">47.7017</td>
+<td style="text-align: center">48.38</td>
+<td style="text-align: center">66.12</td>
+<td style="text-align: center">52.68</td>
 </tr>
 </tbody>
 </table>         
@@ -426,7 +427,7 @@ Once the JSON files are generated, launch AI Analyzer using steps below.
 docker run -it -p 8011:8011 --network host \
   -v /path/to/your/license:/usr/licenses \
   -v $PWD/yolov8m:/yolov8m \
-  --rm vitis_ai_2ve_docker:release_v6.2 "bash"
+  --rm amdih/vitis-ai:versal-2ve-release_v6.2_0612 "bash"
 ```
 - Inside docker:
 
@@ -493,7 +494,7 @@ The JSON file contains an object that describes the configuration for a single m
   },
   "ifms-config": [
     {
-      "name": "ifm0",
+      "name": "images_QuantizeLinear_Output",
       "file": "input_vart/test_image_int8.bin"
     }
   ],
@@ -565,7 +566,7 @@ ml_vart --app-config ml_vart_config.json
 For 100 runs: 
 
 ```bash
-ml_vart --app-config ml_vart_config.json --runs 100
+ml_vart --app-config ml_vart_config.json --benchmark --runs 100
 ```
 
 Expected console output:
