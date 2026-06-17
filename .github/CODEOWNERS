@@ -1,0 +1,5 @@
+# Code owners for automatic review requests (GitHub/GitLab).
+# Use GitHub org usernames or @username.
+
+# C++ examples
+versal_2ve/examples/cpp_examples/ @sureshgupta-amd
