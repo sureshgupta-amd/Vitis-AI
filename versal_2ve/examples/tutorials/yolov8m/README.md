@@ -201,6 +201,12 @@ After quantization finishes, compile the model.
 ### Model Compilation
 Compile the above VINT8 ONNX model ``models/yolov8m_VINT8_skipNodes.onnx`` for the NPU.
 
+```bash
+python3 compile.py
+```
+
+The compilation uses the following configuration:
+
 ```
 provider_options_dict = {
         "config_file": "vitisai_config.json",
