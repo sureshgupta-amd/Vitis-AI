@@ -1,9 +1,4 @@
-<table class="sphinxhide" width="100%">
- <tr width="100%">
-    <td align="center"><img src="https://raw.githubusercontent.com/Xilinx/Image-Collateral/main/xilinx-logo.png" width="30%"/><h1> YOLOv8m Object Detection: Quantization to Deployment</h1>
-    </td>
- </tr>
-</table>
+# YOLOv8m Object Detection: Quantization to Deployment
 
 This tutorial outlines the essential steps for deploying the YOLOv8m model on AMD Versal AI Edge Series Gen 2 VEK385 Evaluation Kit
 using Vitis AI 6.2, while leveraging the mixed-precision capabilities of the Vitis AI compiler.

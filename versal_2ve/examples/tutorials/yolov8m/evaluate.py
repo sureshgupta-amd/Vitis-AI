@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+
+# ===========================================================
+# Copyright © 2026 Advanced Micro Devices, Inc. All rights reserved.
+# MIT License
+# ===========================================================
+
 """
 YOLOv8 Detection: COCO Evaluation
 """
