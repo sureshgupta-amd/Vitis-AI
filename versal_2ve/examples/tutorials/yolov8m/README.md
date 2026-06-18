@@ -460,7 +460,7 @@ For details on launching AI Analyzer inside docker, see AI Analyzer section of V
 
 ### Using Vitis AI Runtime (VART)
 
-As seen above, the total inference time using the ONNX Runtime Execution Provider is **22.757ms**. By switching to VART, this inference time can be reduced to **16.545 ms**. 
+As seen above, the total inference time using the ONNX Runtime Execution Provider is **24.441ms**. By switching to VART, this inference time can be reduced to **13.687 ms**. 
 VART offloads computation directly to the NPU with minimal CPU involvement, delivering more efficient end-to-end performance compared to ONNX Runtime.
 
 VART is a runtime environment designed for high-efficiency AI model inference on NPU hardware with minimal CPU overhead, and is used for precise end-to-end performance measurement.
