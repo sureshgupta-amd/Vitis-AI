@@ -328,7 +328,7 @@ Use ``evaluate.py`` script to run evaluation on 5k COCO dataset. The python scri
 * ``cpu-int8-fp32``: To evaluate VINT8-FP32 quantized ONNX model on CPU using ``CPUExecutionProvider``
 
     ```bash
-    python3 evaluate.py --model models/yolov8m_VINT8_skipNodes.onnx --coco_dataset datasets/coco --device cpu-int8
+    python3 evaluate.py --model models/yolov8m_VINT8_skipNodes.onnx --coco_dataset datasets/coco --device cpu-int8-fp32
     ```
 
 * ``npu-bf16``: To evaluate Vitis AI compiled BF16 model on VEK385 NPU using ``VitisAIExecutionProvider`` provided appropriate ``--cache_dir`` and ``--cache_key``
