@@ -210,10 +210,10 @@ def main():
     print(f"\n3. Running inference and evaluation on {len(img_ids)} images...")
     print(f"   Confidence threshold: {args.conf}")
     print(f"   NMS IoU threshold: {args.iou}")
-    print(f"   Evaluation method: {'COCO (pycocotools)' if args.use_coco_metrics else 'Ultralytics (pickle_workflow)'}")
+    print(f"   Evaluation method: {'COCO (pycocotools)' if args.use_coco_metrics else 'Ultralytics'}")
 
     if not args.use_coco_metrics:
-        # Use Ultralytics evaluation (matches pickle_workflow)
+        # Use Ultralytics evaluation
         stats, num_classes = evaluate_model_ultralytics(
             session,
             input_name,
