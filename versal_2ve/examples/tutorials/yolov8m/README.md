@@ -573,7 +573,7 @@ ml_vart --app-config ml_vart_config.json --benchmark --runs 100
 Expected console output:
 
 ```bash
-Wrote tensor 0 data for frames 0-0 to file: "output_vart/infer_out0-bf16_1x84x8400_output0.bin"
+Average inference time over 100 runs: 13.82 ms
 Run completed successfully.
 ```
 
